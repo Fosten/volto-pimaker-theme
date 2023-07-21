@@ -1,0 +1,7 @@
+img.ui.image {
+    display: inline-block;
+}
+.logo a {
+    color: blue;
+    font-size: 22px;
+}
