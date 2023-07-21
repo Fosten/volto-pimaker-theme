@@ -54,6 +54,7 @@ class Header extends Component {
             <div className="logo-nav-wrapper">
               <div className="logo">
                 <Logo />
+                <a href="/">Pi Maker</a>
               </div>
               <Navigation pathname={this.props.pathname} />
             </div>
