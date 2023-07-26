@@ -60,11 +60,6 @@ class Header extends Component {
             </div>
             <div className="tools-search-wrapper">
               <LanguageSelector />
-              {!this.props.token && (
-                <div className="tools">
-                  <Anontools />
-                </div>
-              )}
               <div className="search">
                 <SearchWidget />
               </div>

@@ -10,6 +10,7 @@ import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { useSelector, shallowEqual } from 'react-redux';
 import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL, addAppURL } from '@plone/volto/helpers';
+import { Logo } from '@plone/volto/components';
 
 const messages = defineMessages({
   copyright: {
@@ -44,73 +45,84 @@ const Footer = ({ intl }) => {
     >
       <Container>
         <Segment basic inverted color="grey" className="discreet">
-          <FormattedMessage
-            id="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
-            defaultMessage="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
-            values={{
-              plonecms: (
-                <FormattedMessage
-                  id="Plone{reg} Open Source CMS/WCM"
-                  defaultMessage="Plone{reg} Open Source CMS/WCM"
-                  values={{ reg: <sup>®</sup> }}
-                />
-              ),
-              copyright: (
-                <abbr title={intl.formatMessage(messages.copyright)}>©</abbr>
-              ),
-              current_year: new Date().getFullYear(),
-              plonefoundation: (
-                <a className="item" href="http://plone.org/foundation">
-                  <FormattedMessage
-                    id="Plone Foundation"
-                    defaultMessage="Plone Foundation"
-                  />
-                </a>
-              ),
-            }}
-          />{' '}
-          <FormattedMessage
-            id="Distributed under the {license}."
-            defaultMessage="Distributed under the {license}."
-            values={{
-              license: (
-                <a
-                  className="item"
-                  href="http://creativecommons.org/licenses/GPL/2.0/"
-                >
-                  <FormattedMessage
-                    id="GNU GPL license"
-                    defaultMessage="GNU GPL license"
-                  />
-                </a>
-              ),
-            }}
-          />
-        </Segment>
-        <List horizontal inverted>
-          {siteActions?.length
-            ? map(siteActions, (item) => (
-                <div role="listitem" className="item" key={item.id}>
-                  <UniversalLink
-                    className="item"
-                    href={
-                      item.url ? flattenToAppURL(item.url) : addAppURL(item.id)
-                    }
-                  >
-                    {item?.title}
-                  </UniversalLink>
-                </div>
-              ))
-            : null}
-          <div role="listitem" className="item">
-            <a className="item" href="https://plone.org">
-              <FormattedMessage
-                id="Powered by Plone & Python"
-                defaultMessage="Powered by Plone & Python"
-              />
-            </a>
+          <div className="footersitemap">
+            <div className="footercol1">
+            <h2>
+                <a href="/smarthome">Smarthome</a>
+              </h2>
+              <ul>
+                <li>
+                  <a href="/smarthome/guide">Guide</a>
+                </li>
+                <li>
+                  <a href="/smarthome/sensors">Sensors</a>
+                </li>
+                <li>
+                  <a href="/smarthome/hardware">Hardware</a>
+                </li>
+              </ul>
+            </div>
+            <div className="footercol2">
+            <h2>
+                <a href="/docs">Documentation</a>
+              </h2>
+              <ul>
+                <li>
+                  <a href="/docs/monitoring">Monitoring</a>
+                </li>
+                <li>
+                  <a href="/docs/data">Data</a>
+                </li>
+                <li>
+                  <a href="/docs/media">Media</a>
+                </li>
+              </ul>
+            </div>
+            <div className="footercol3">
+              <h2>
+                <a href="/club">Club</a>
+              </h2>
+              <ul>
+                <li>
+                  <a href="/club/agendas">Agendas</a>
+                </li>
+                <li>
+                  <a href="/club/minutes">Minutes</a>
+                </li>
+                <li>
+                  <a href="/club/mission">Mission</a>
+                </li>
+              </ul>
+            </div>
+            <div className="footercol4">
+              <div className="logo">
+                <Logo />
+                <a href="/">Pi Maker</a>
+                <div className="slogan">"Allow Pi to cool after compiling in the oven."</div>
+              </div>
+            </div>
           </div>
-        </List>
+        </Segment>
+        <Segment basic inverted color="grey" className="discreet">
+          {/* wrap in div for a11y reasons: listitem role cannot be on the <a> element directly */}
+          <div className="footerbar">
+            <div className="companyinfo">
+              <div className="email">
+                <a href="mailto:info@pimaker.org">info@pimaker.org</a>
+              </div>
+              <div className="youtube"></div>
+              <div className="twitter">
+                <a href="https://plone.org" target="_blank" rel="noreferrer">
+                  Powered by Plone
+                </a>
+              </div>
+              <div className="facebook"></div>
+              <div className="accessibility">
+                <a href="/accessibility">Accessibility</a>
+              </div>
+            </div>
+          </div>
+        </Segment>
       </Container>
     </Segment>
   );
