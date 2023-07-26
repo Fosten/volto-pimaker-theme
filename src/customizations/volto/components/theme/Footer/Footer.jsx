@@ -4,20 +4,9 @@
  */
 
 import React from 'react';
-import { Container, List, Segment } from 'semantic-ui-react';
-import { map } from 'lodash';
-import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
-import { useSelector, shallowEqual } from 'react-redux';
-import { UniversalLink } from '@plone/volto/components';
-import { flattenToAppURL, addAppURL } from '@plone/volto/helpers';
+import { Container, Segment } from 'semantic-ui-react';
+import { injectIntl } from 'react-intl';
 import { Logo } from '@plone/volto/components';
-
-const messages = defineMessages({
-  copyright: {
-    id: 'Copyright',
-    defaultMessage: 'Copyright',
-  },
-});
 
 /**
  * Component to display the footer.
@@ -26,13 +15,6 @@ const messages = defineMessages({
  * @returns {string} Markup of the component
  */
 const Footer = ({ intl }) => {
-  const { siteActions = [] } = useSelector(
-    (state) => ({
-      siteActions: state.actions?.actions?.site_actions,
-    }),
-    shallowEqual,
-  );
-
   return (
     <Segment
       role="contentinfo"
@@ -47,7 +29,7 @@ const Footer = ({ intl }) => {
         <Segment basic inverted color="grey" className="discreet">
           <div className="footersitemap">
             <div className="footercol1">
-            <h2>
+              <h2>
                 <a href="/smarthome">Smarthome</a>
               </h2>
               <ul>
@@ -63,7 +45,7 @@ const Footer = ({ intl }) => {
               </ul>
             </div>
             <div className="footercol2">
-            <h2>
+              <h2>
                 <a href="/docs">Documentation</a>
               </h2>
               <ul>
@@ -98,7 +80,9 @@ const Footer = ({ intl }) => {
               <div className="logo">
                 <Logo />
                 <a href="/">Pi Maker</a>
-                <div className="slogan">"Allow Pi to cool after compiling in the oven."</div>
+                <div className="slogan">
+                  "Allow Pi to cool after compiling in the oven."
+                </div>
               </div>
             </div>
           </div>
