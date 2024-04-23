@@ -16,15 +16,7 @@ import { Logo } from '@plone/volto/components';
  */
 const Footer = ({ intl }) => {
   return (
-    <Segment
-      role="contentinfo"
-      vertical
-      padded
-      inverted
-      color="grey"
-      textAlign="center"
-      id="footer"
-    >
+    <Segment role="contentinfo" vertical padded inverted color="grey" textAlign="center" id="footer">
       <Container>
         <Segment basic inverted color="grey" className="discreet">
           <div className="footersitemap">
@@ -80,9 +72,7 @@ const Footer = ({ intl }) => {
               <div className="logo">
                 <Logo />
                 <a href="/">Pi Maker</a>
-                <div className="slogan">
-                  "Allow Pi to cool after compiling in the oven."
-                </div>
+                <div className="slogan">"Allow Pi to cool after compiling in the oven."</div>
               </div>
             </div>
           </div>
