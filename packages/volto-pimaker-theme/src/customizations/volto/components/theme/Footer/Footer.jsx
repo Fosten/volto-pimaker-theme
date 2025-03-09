@@ -37,26 +37,26 @@ const Footer = ({ intl }) => {
                   <a href="/smarthome/guide">Guide</a>
                 </li>
                 <li>
-                  <a href="/smarthome/sensors">Sensors</a>
+                  <a href="/smarthome/hardware">Hardware</a>
                 </li>
                 <li>
-                  <a href="/smarthome/hardware">Hardware</a>
+                  <a href="/smarthome/projects">Projects</a>
                 </li>
               </ul>
             </div>
             <div className="footercol2">
               <h2>
-                <a href="/docs">Documentation</a>
+                <a href="/smarthome/software">Software</a>
               </h2>
               <ul>
                 <li>
-                  <a href="/docs/monitoring">Monitoring</a>
+                  <a href="/smarthome/software/monitoring">Monitoring</a>
                 </li>
                 <li>
-                  <a href="/docs/data">Data</a>
+                  <a href="/smarthome/software/data">Data</a>
                 </li>
                 <li>
-                  <a href="/docs/media">Media</a>
+                  <a href="/smarthome/software/media">Media</a>
                 </li>
               </ul>
             </div>
